@@ -57,7 +57,11 @@ class ArrayObject extends \ArrayObject implements ObjectInterface {
 	}
 	
 	public function toPrimitiveArray() {
-		return $this->getArrayCopy();
+		$array = $this->getArrayCopy();
+		foreach($array as $k=>$v) {
+			if($v instanceof ArrayObject) $array[$k] = $v->toPrimitiveArray();
+		}
+		return $array;
 	}
 	
 	public function get($field) {

@@ -6,8 +6,39 @@ class ArrayObjectTest extends \PHPUnit_Framework_TestCase {
 
 	function setUp() {
 	}
+	
+	public function testConstructor1() {
+		
+		$a = array('name', 'age');
+		$b = new ArrayObject('name', 'age');
+		$c = new ArrayObject($a);
+		$d = new ArrayObject($b);
+		
+		$this->assertEquals('name', $a['0']);
+		$this->assertEquals('name', $b['0']);
+		$this->assertEquals('name', $c['0']);
+		$this->assertEquals('name', $d['0']);
+		
+		$this->assertEquals('age', $a[1]);
+		$this->assertEquals('age', $b[1]);
+		$this->assertEquals('age', $c[1]);
+		$this->assertEquals('age', $d[1]);
+		
+		$this->assertEquals('age', $b->get(1));
+		$this->assertEquals('age', $c->get(1));
+		$this->assertEquals('age', $d->get(1));
+		
+		$this->assertEquals('age', $b->get('1'));
+		$this->assertEquals('age', $c->get('1'));
+		$this->assertEquals('age', $d->get('1'));
+		
+		$this->assertEquals('name', $b->get(0));
+		$this->assertEquals('name', $c->get(0));
+		$this->assertEquals('name', $d->get(0));
+		
+	}
 
-	public function test() {
+	public function testConstructor2() {
 
 		$records = array(
 				array(

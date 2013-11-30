@@ -1,8 +1,8 @@
 {
-  "name": "php-mod/object",
-  "description": "Object class for PHP",
-  "keywords": ["object"],
-  "homepage": "https://github.com/php-mod/object",
+  "name": "php-mod/php-lang",
+  "description": "Java.lang like for PHP",
+  "keywords": ["lang"],
+  "homepage": "https://github.com/php-mod/php-lang",
   "type": "library",
   "license": "MIT",
   "authors": [
